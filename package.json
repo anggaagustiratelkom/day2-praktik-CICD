@@ -1,0 +1,17 @@
+{
+  "name": "ci-cd-belajar",
+  "version": "1.0.0",
+  "description": "Project latihan CI/CD (Sesi 1 & 2)",
+  "main": "src/stringUtils.js",
+  "type": "commonjs",
+  "scripts": {
+    "lint": "eslint src scripts",
+    "build": "node scripts/validate-build.js",
+    "start": "node -e \"console.log(require('./src/stringUtils').capitalize('halo dunia'))\""
+  },
+  "keywords": ["ci", "cd", "belajar"],
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  }
+}
