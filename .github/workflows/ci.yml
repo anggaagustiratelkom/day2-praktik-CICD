@@ -1,7 +1,3 @@
-# ============================================================
-# CI Pipeline — GitHub Actions (versi dasar)
-# Stages: Checkout -> Setup -> Install -> Lint -> Build
-# ============================================================
 name: CI
 
 on:
