@@ -8,7 +8,7 @@ console.log('🔍 Menjalankan build validation...');
 
 const wajib = {
   stringUtils: ['capitalize', 'reverse', 'wordCount', 'isPalindrome'],
-  mathUtils: ['add', 'divide', 'isPrime','test'],
+  mathUtils: ['add', 'divide', 'isPrime'],
 };
 
 const modul = { stringUtils, mathUtils };
