@@ -1,0 +1,41 @@
+name: Triggers Demo
+
+on:
+  # Case A: setiap push ke branch tertentu
+  push:
+    branches: [main, 'release/**']
+    # Case B: hanya jika file di path ini berubah (hemat resource)
+    paths:
+      - 'src/**'
+      - 'package.json'
+
+  # Case C: setiap PR menuju main
+  pull_request:
+    branches: [main]
+
+  # Case D: saat ada tag versi (mis. v1.2.0) -> cocok untuk release
+  # (dipisah karena push tag beda dari push branch)
+  # Aktifkan dengan menaruh di push.tags jika perlu:
+  # push:
+  #   tags: ['v*.*.*']
+
+  # Case E: terjadwal (cron) — "nightly build"
+  schedule:
+    - cron: '0 22 * * *'   # tiap hari 22:00 UTC
+
+  # Case F: tombol manual di tab Actions
+  workflow_dispatch:
+    inputs:
+      alasan:
+        description: 'Alasan menjalankan manual'
+        required: false
+        default: 'uji coba'
+
+jobs:
+  info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Tampilkan pemicu
+        run: |
+          echo "Pipeline dipicu oleh: ${{ github.event_name }}"
+          echo "Branch/Ref: ${{ github.ref }}"
