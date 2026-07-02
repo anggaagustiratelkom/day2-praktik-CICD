@@ -20,4 +20,9 @@ function isPrime(n) {
   return true;
 }
 
-module.exports = { add, divide, isPrime };
+function isZeroes(n) {
+  if (!Number.isInteger(n) || n == 0) return false;
+  return true;
+}
+
+module.exports = { add, divide, isPrime , isZeroes};
